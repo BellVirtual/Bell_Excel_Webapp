@@ -1,0 +1,115 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bell SQL</title>
+
+
+
+
+    <link href="{%static 'bootstrap4/css/bootstrap.css' %}" rel="stylesheet"></link>
+    <link href="{%static 'custom.css' %}" rel="stylesheet"></link>
+
+    <script src="{%static 'render.js' %}"></script>
+    <link rel="icon" href="{%static 'Bell_Virtual_Icon.ico' %}">
+
+
+  </head>
+
+
+  <body id="page-top" style="background-color:black;">
+    <div id="full-width" class="test_files">
+      <a href="{%static 'test_spreadsheet.xlsx' %}" style="color:cyan;" target="" download"bulkfile">Download a test spreadsheet</a>
+    </div>
+    <div class="the_title">
+      <h1 style="color:cyan;font-size:100px;" >Bell</h1>
+      <h2 style="color:white;font-size:100px;" >  SQL</h1>
+    </div>
+
+
+
+    <!---Menu--->
+    <nav class="navbar py-3 navbar-light fixed-bottom">
+
+
+
+      <!---Downloads------>
+      <div class="stacked_buttons">
+        <a href="{%static 'spreadsheets.csv' %}" style="color:cyan;" target="" download"bulkfile">Download CSV</a>
+
+        <a href="{%static 'spreadsheets.xlsx' %}" style="color:cyan;" target="" download"bulkfile">Download Excel</a>
+      </div>
+      <div class="stacked_buttons">
+        <a href="{%static 'spreadsheet.sqlite3' %}" style="color:cyan;" target="" download"bulkfile">Download SQL</a>
+
+        <a href="{%static 'data.json' %}" style="color:cyan;" target="" download"bulkfile">Download JSON</a>
+      </div>
+
+
+
+      <!---Upload Files------>
+      <form method="post" enctype="multipart/form-data" action="upload">
+        {% csrf_token %}
+          <div class="form-group">
+            <div class = "file_upload">
+              <div>
+                <label class="btn btn-primary btn-sm"  >
+                    Choose CSV or Excel Files <input  multiple type="file" name="document" hidden>
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-sm">Upload File</button>
+            </div>
+          </div>
+        </div>
+      </form>
+        <!---Remove Columns------>
+      <form method="post" action="remove_colums">
+        <div classs= "remove_button">
+        {% csrf_token %}
+          <button type="submit" class = "btn btn-primary btn-sm" >Remove Column</button>
+          <input  type="text" id="lname" name="lname" placeholder="Enter column name here" style ="font-weight: bold; color:black;"></input>
+        </div>
+      </form>
+
+    <!---Clear DataBase--->
+      <div class="clear_button">
+        <button type="submit" class="btn btn-primary btn-sm" onclick=location.href="clear">Clear DataBase</button>
+      </div>
+
+
+    </nav>
+
+
+
+
+
+    <div id="spreadsheetnames"style= "padding-top:50px;"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <img  class="mx-auto d-block" src="{%static 'bell_virtual_emblem.gif' %}">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="description">
+     <p>Bell SQL is a web app designed to help users combine, edit and share spreadsheets across multiple diffrent file types.
+       It was devolped using Django in python for the backend and uses custom javascript and custom css on the frontend and as the name implies
+       implements SQL for data storage.
+       Feel free to try downloading the test spreadsheet or using your own spreadsheets to test out this application.<p>
+    </div>
+
+
+
+
+
+  </body>
+  <footer>
+
+    <script src="{%static 'bootstrap4/js/bootstrap.js' %}"></script>
+
+  </footer>
+
+
+<html>

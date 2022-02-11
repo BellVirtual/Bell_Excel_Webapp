@@ -1,0 +1,69 @@
+
+.test_files{
+  width: 300px;
+  border: solid white 1px;
+  font-weight: bold;
+}
+
+.the_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+
+.stacked_buttons{
+      display: grid;
+      font-weight: bold;
+      padding-left:25px;
+      font-size: 15px
+}
+
+
+.file_upload {
+  display: grid;
+  font-weight: bold;
+}
+
+.file_upload input {
+
+}
+
+.remove_colums{
+  display: grid;
+}
+.clear_button{
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, .btn-outline-primary {
+    background-color: black !important;
+    border-color: white !important;
+    color: cyan !important;
+    font-weight: bold;
+    border: solid white 1px;
+}
+
+
+.navbar{
+  background-color: black !important;
+  border:1px solid white;
+}
+.table>tbody>tr>td,
+.table>tbody>tr>th {
+   background-color: black;
+ }
+
+ .table>thead>tr>td,
+ .table>thead>tr>th{
+    background-color: black;
+    color: cyan;
+    font-weight: bold;
+  }
+.description{
+    color:white;
+    padding-left:250px;
+    padding-right:250px;
+    padding-top: 30px;
+    padding-bottom: 200px;
+    text-align:center;
+  }
